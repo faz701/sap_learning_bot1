@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: telegram-scorm-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot_server.py
+    envVars:
+      - key: TOKEN
+        sync: false
+      - key: BASE_URL
+        value: "https://your-service-name.onrender.com"
